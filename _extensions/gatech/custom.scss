@@ -60,7 +60,7 @@ $font-family-sans-serif: "Roboto" !default;
 
 $body-color: $navy-blue !default;
 
-$callout-color-note: $yellow !default;
+$callout-color-note: $tech-gold !default;
 $callout-color-tip: $canopy-lime !default;
 $callout-color-caution: $new-horizon !default;
 $callout-color-warning: $rat-cap !default;
@@ -73,9 +73,34 @@ $opacity-default: 0.5;
 
 /*-- scss:rules --*/
 
+// --- Added for smaller captions ---
+.reveal .slides figure figcaption,
+.reveal .slides .caption {
+font-size: 0.6em;
+color: $gray-matter;
+margin-top: 0.5em;
+line-height: 1.2;
+text-align: center;
+}
+
 .reveal .slides blockquote {
   color: $gray-matter;
   border-left: 4px solid $buzz-gold;
+}
+
+/* Level 1 Bullets */
+.reveal ul {
+  list-style-type: disc; /* Options: disc, circle, square, none */
+}
+
+/* Level 2 Bullets (Nested once) */
+.reveal ul ul {
+  list-style-type: square; 
+}
+
+/* Level 3 Bullets (Nested twice) */
+.reveal ul ul ul {
+  list-style-type: circle;
 }
 
 // Custom classes
@@ -102,4 +127,27 @@ $opacity-default: 0.5;
   .reveal .slides section .fragment.hl-#{$color}.visible {
     background-color: rgba($value, $opacity-default);
   }
+}
+
+/* Social Links Styling */
+.quarto-title-author-links {
+  margin-top: 0.5em;
+  font-size: 0.7em;
+  display: flex;
+  justify-content: center; /* or left, depending on preference */
+  gap: 15px;
+}
+
+.quarto-title-author-link {
+  color: #555555 !important; /* Grey color */
+  text-decoration: none;
+  font-style: normal;
+}
+
+.quarto-title-author-link:hover {
+  color: #107895 !important; /* Your theme accent color */
+}
+
+.quarto-title-author-link i {
+  margin-right: 5px;
 }
